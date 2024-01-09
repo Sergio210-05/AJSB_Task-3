@@ -1,0 +1,29 @@
+.score-board {
+  width: 150px;
+  height: 150px;
+  border: 10px solid rgb(7, 2, 2);
+  margin: 20px;
+  background-color: #c9d840;
+  font-size: 100px;
+  color: crimson;
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.score-board__header {
+  width: 150px;
+  height: 30px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.score-board__count {
+  width: 150px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

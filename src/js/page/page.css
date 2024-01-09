@@ -1,0 +1,5 @@
+.game-container {
+  width: 900px;
+  height: 700px;
+  display: flex;
+}

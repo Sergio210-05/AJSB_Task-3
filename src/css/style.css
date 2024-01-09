@@ -1,0 +1,32 @@
+body {
+    color: #999;
+}
+
+.field {
+  width: 600px;
+  height: 600px;
+  border: 5px solid brown;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  height: 25%;
+}
+
+.column {
+  display: inline;
+  width: 25%;
+  height: 100%;
+  border: 5px solid brown;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: darkgreen;
+  /* border-color: black; */
+}
+
+.cell__active {
+  background-image: url('../img/goblin.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
