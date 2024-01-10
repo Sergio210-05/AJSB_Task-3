@@ -8,15 +8,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const Goblin = new Game(GameContainer);
   const Board = new ScoreBoard(GameContainer);
-  const boardCount = Board.querySelector('.score-board__count');
-  console.log(boardCount);
+  const fairCount = Board.querySelector('.fair-board__count');
+  // const goalsCount = Board.querySelector('.score-board__count');
+  console.log(fairCount);
   // Goblin.changeCell();
   // Goblin.changeCell();
   let missed = 0;
+  // let goals = 0;
   let countdown = setInterval(() => {
-    boardCount.innerText = missed;
-    missed = Goblin.changeCell();
-    if (missed > 5) {
+    // fairCount.innerText = missed;
+    // goalsCount.innerText = goals;
+    missed = Goblin.changeCell(fairCount);
+    if (missed >= 5) {
       setTimeout(() => {
         clearInterval(countdown);
         alert('Вы проиграли!');

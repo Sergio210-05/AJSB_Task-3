@@ -2,6 +2,7 @@ export default class Game {
   constructor(container, size=4) {
     this.cells = [];
     this.missed = 0;
+    this.goals  = 0;
     const field = document.createElement('div');
     field.classList.add('field');
     this.field = field;
@@ -26,7 +27,7 @@ export default class Game {
     // return field;
   }
 
-  changeCell() {
+  changeCell(fairCount) {
     const currentCell = document.querySelector('.cell__active');
     let newCellIndex;
     do {
@@ -38,20 +39,27 @@ export default class Game {
     }
     this.cells[newCellIndex].classList.add('cell__active');
     this.missed += 1;
+    fairCount.innerText = this.missed;
     return this.missed;
   }
 
   onClick(e) {
-    console.log(e.target.classList);
+    // console.log(e.target.classList);
     if (e.target.classList.contains('cell__active')) {
+      const fairCount = document.querySelector('.fair-board__count');
+      const goalsCount = document.querySelector('.score-board__count');
       this.missed = 0;
-      // fair();
+      this.goals++;
+      fairCount.innerText = this.missed;
+      goalsCount.innerText = this.goals;
       console.log('Win!', this.missed);
+      // this.changeCell(fairCount);
+      // setTimeout(() => {
+      e.target.classList.remove('cell__active');
+      // }, 1000)
+      
+
       return;
     }
-  }
-
-  set fair(score=1) {
-    this.missed += score;
   }
 }

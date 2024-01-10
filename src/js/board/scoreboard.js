@@ -2,20 +2,40 @@ import './scoreboard.css';
 
 export default class ScoreBoard {
   constructor(container) {
+    const scoreBoardZone = document.createElement('div');
+    scoreBoardZone.classList.add('score-board__zone');
+    container.appendChild(scoreBoardZone);
+
+    const fairBoard = document.createElement('div');
+    // container.createElement('div');
+    fairBoard.classList.add('fair-board');
+    scoreBoardZone.appendChild(fairBoard);
+
+    const fairBoardHeader = document.createElement('div');
+    fairBoardHeader.classList.add('fair-board__header');
+    fairBoard.appendChild(fairBoardHeader);
+    fairBoardHeader.innerText = 'Пропущено:';
+
+    const fairBoardCount = document.createElement('div');
+    fairBoardCount.classList.add('fair-board__count');
+    fairBoard.appendChild(fairBoardCount);
+    fairBoardCount.innerText = 0;
+
     const scoreBoard = document.createElement('div');
     // container.createElement('div');
     scoreBoard.classList.add('score-board');
-    container.appendChild(scoreBoard);
+    scoreBoardZone.appendChild(scoreBoard);
 
-    const header = document.createElement('div');
-    header.classList.add('score-board__header');
-    scoreBoard.appendChild(header);
-    header.innerText = 'Пропущено:';
+    const scoreHeader = document.createElement('div');
+    scoreHeader.classList.add('score-board__header');
+    scoreBoard.appendChild(scoreHeader);
+    scoreHeader.innerText = 'Попаданий:';
 
-    const count = document.createElement('div');
-    count.classList.add('score-board__count');
-    scoreBoard.appendChild(count);
+    const scoreСount = document.createElement('div');
+    scoreСount.classList.add('score-board__count');
+    scoreBoard.appendChild(scoreСount);
+    scoreСount.innerText = 0;
 
-    return scoreBoard;
+    return scoreBoardZone;
   }
 }
