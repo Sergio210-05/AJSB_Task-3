@@ -1,4 +1,4 @@
-export default class Hummer {
+export default class Hammer {
   constructor(missed=0) {
     this._missed = missed;
     // console.log(this._missed);
