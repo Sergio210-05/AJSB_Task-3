@@ -22,7 +22,6 @@ body {
   margin: 0;
   box-sizing: border-box;
   background-color: darkgreen;
-  cursor: url('../img/hammer.png') 10 10, pointer;
 }
 
 .cell__active {
